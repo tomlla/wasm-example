@@ -1,0 +1,2 @@
+- config prettier
+- config eslint
