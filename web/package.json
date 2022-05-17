@@ -1,5 +1,5 @@
 {
-  "name": "wasm-example",
+  "name": "wasm-example-frontend",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -11,7 +11,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "recoil": "^0.7.3-alpha.2"
+    "recoil": "^0.7.3-alpha.2",
+    "wasm-example": "file:../pkg"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

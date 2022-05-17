@@ -6,5 +6,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     open: '/',
+ 	fs: {
+      allow: [
+        './',
+        '../pkg/',
+      ]
+    },
   },
 })
