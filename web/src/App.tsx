@@ -5,14 +5,23 @@ import init, { add } from "wasm-example";
 
 import { Link } from "react-router-dom";
 
+let initializerCalled: boolean = false;
+const wasmInit = async () => {
+  if (!initializerCalled) {
+    initializerCalled = true;
+    // ここで
+    // http://localhost:3000/@fs/<Path to the project root dir>/pkg/wasm_example_bg.wasm
+    // からwasm file を取得している模様
+    await init();
+    console.log("wasm initialized");
+  }
+};
+
 export const App: React.FC = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    (async () => {
-      await init();
-      console.log("wasm initialized");
-    })();
+    wasmInit();
   }, []);
 
   const inc = () => {
